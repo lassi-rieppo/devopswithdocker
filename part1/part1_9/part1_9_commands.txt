@@ -1,0 +1,2 @@
+touch webservice.log
+docker run -v "$(pwd)/webservice.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service

@@ -1,0 +1,62 @@
+1.1 Getting started
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                     PORTS     NAMES
+3b2ac8af1781   nginx     "/docker-entrypoint.…"   16 seconds ago   Up 14 seconds              80/tcp    vibrant_neumann
+f4bcfbefd9c9   nginx     "/docker-entrypoint.…"   17 seconds ago   Exited (0) 6 seconds ago             vigorous_jemison
+21533a007a53   nginx     "/docker-entrypoint.…"   20 seconds ago   Exited (0) 3 seconds ago             sweet_turing
+
+1.2 Cleanup
+
+lassi@lassi-VirtualBox:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+lassi@lassi-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+1.3 Secret message
+
+'You can find the source code here: https://github.com/docker-hy'
+
+1.4 Missing dependencies
+
+docker container run -d -it ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+docker exec -it recursing_pascal bash
+root@a9c64bd96f6b:/# apt-get update; apt-get install curl
+exit
+
+docker attach recursing_pascal
+
+Input: helsinki.fi
+
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+
+
+1.5 Sizes of images
+
+lassi@lassi-VirtualBox:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED       SIZE
+ubuntu                              latest    7e0aa2d69a15   2 weeks ago   72.7MB
+fav_distro                          bionic    4eb8f7c43909   2 weeks ago   63.1MB
+ubuntu                              18.04     4eb8f7c43909   2 weeks ago   63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   8 weeks ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   8 weeks ago   15.7MB
+
+Alpine is much smaller than Ubuntu (15.7 MB vs 83 MB)
+
+Alpine shows the same secret message.
+
+1.6 Hello Docker Hub
+
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
+
