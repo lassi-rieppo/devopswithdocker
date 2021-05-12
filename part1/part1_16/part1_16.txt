@@ -1,0 +1,30 @@
+# pull image
+
+sudo docker pull devopsdockeruh/heroku-example
+
+# install heroku CLI
+
+sudo snap install --classic heroku
+
+# Login to heroku
+
+heroku login
+
+# sign into Container Registry
+
+heroku container:login
+
+# tag the docker image
+
+docker tag 5221e4b03bc7 registry.heroku.com/app-lassi/web
+
+# push the Docker image to heroku
+
+docker push registry.heroku.com/app-lassi/web
+
+Deploy the changes
+
+heroku container:release -a app-lassi web
+
+# App is now located at:
+https://app-lassi.herokuapp.com/
