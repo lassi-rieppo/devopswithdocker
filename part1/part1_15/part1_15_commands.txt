@@ -1,0 +1,2 @@
+docker build . -t guessing-game
+docker run -it guessing-game
